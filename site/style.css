@@ -322,6 +322,82 @@
                 gap: 20px;
             }
         }
-        .speaker {
+.speakers-container {
+    display: grid;
+    /* repeat(6, 1fr) forza esattamente 6 colonne di uguale larghezza */
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 15px; /* Spazio tra uno speaker e l'altro */
+    width: 100%;
+    margin-top: 40px;
+    align-items: start; /* Allinea in alto in caso di altezze diverse */
+}
 
-        }
+/* Stile del singolo speaker */
+.speaker {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Animazione per far apparire gli speaker quando la slide è attiva */
+.slide.active .speaker {
+    animation: fadeInUp 0.6s ease-out 0.8s forwards; /* Ritardo (0.8s) per apparire dopo il resto */
+}
+
+/* Stile opzionale per l'immagine dello speaker (se presente) */
+.speaker img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+/* Stile per il nome */
+.speaker h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+/* Stile per il ruolo/job title */
+.speaker p {
+    font-size: 0.8rem;
+    color: #888;
+    margin: 0;
+    line-height: 1.4;
+    /* Sovrascriviamo l'animazione globale dei p per evitare conflitti */
+    opacity: 1; 
+    transform: none;
+    animation: none;
+}
+.speaker img {
+    /* 1. Dimensioni fisse e uguali per creare un quadrato perfetto */
+    width: 100px;
+    height: 100px;
+
+    /* 2. La magia: "cover" ritaglia l'immagine per riempire il quadrato 
+          senza deformare/schiacciare la foto originale */
+    object-fit: cover;
+
+    /* 3. Arrotondamento del 50% per trasformare il quadrato in cerchio */
+    border-radius: 50%;
+
+    /* Stile estetico */
+    margin-bottom: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.2); /* Bordo sottile semitrasparente */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);     /* Leggera ombra per profondità */
+    transition: all 0.3s ease;                  /* Per l'animazione hover */
+}
+
+/* Opzionale: Effetto quando passi sopra con il mouse */
+.speaker:hover img {
+    transform: scale(1.1);       /* Ingrandisce leggermente */
+    border-color: #ffffff;       /* Il bordo diventa bianco pieno */
+    box-shadow: 0 8px 25px rgba(255,255,255,0.2); /* Aumenta il bagliore */
+}
