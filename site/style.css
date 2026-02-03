@@ -401,3 +401,21 @@
     border-color: #ffffff;       /* Il bordo diventa bianco pieno */
     box-shadow: 0 8px 25px rgba(255,255,255,0.2); /* Aumenta il bagliore */
 }
+
+#maintitolo {
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+#speakers_sott {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+}
