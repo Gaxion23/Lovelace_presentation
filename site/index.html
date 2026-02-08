@@ -4,114 +4,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ada Lovelace - The Countess</title>
     <link rel="stylesheet" href="style.css">
-
-
 </head>
 
 <body>
+    <!-- Cursore personalizzato -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Menu di navigazione 3D -->
+    <nav class="nav-menu">
+        <div class="nav-item" data-slide="0">
+            <span class="nav-number">01</span>
+            <span class="nav-label">Speakers</span>
+        </div>
+        <div class="nav-item" data-slide="1">
+            <span class="nav-number">02</span>
+            <span class="nav-label">Introduction</span>
+        </div>
+        <div class="nav-item" data-slide="2">
+            <span class="nav-number">03</span>
+            <span class="nav-label">Biography</span>
+        </div>
+        <div class="nav-item" data-slide="3">
+            <span class="nav-number">04</span>
+            <span class="nav-label">Education</span>
+        </div>
+        <div class="nav-item" data-slide="4">
+            <span class="nav-number">05</span>
+            <span class="nav-label">Family</span>
+        </div>
+        <div class="nav-item" data-slide="5">
+            <span class="nav-number">06</span>
+            <span class="nav-label">Projects</span>
+        </div>
+        <div class="nav-item" data-slide="6">
+            <span class="nav-number">07</span>
+            <span class="nav-label">Legacy</span>
+        </div>
+    </nav>
+
     <div class="slideshow">
+        <!-- SLIDE 1: Speakers con effetto 3D Card -->
         <div class="slide slide-1 active">
             <div class="slide-content full">
-    <h1 id="maintitolo">Ada Lovelace : The Countess</h1>
-    <h1 id="speakers_sott">Speakers</h1>
-    
-    
-    <div class="speakers-container">
-        
-        <div class="speaker">
-            <img src="foto/1.jpg" alt="Gabriele Ionadi">
-            <h3>Gabriele Ionadi</h3>
-            <p>Iona</p>
-        </div>
+                <h1 id="maintitolo" class="glitch" data-text="Ada Lovelace : The Countess">Ada Lovelace : The Countess</h1>
+                <h1 id="speakers_sott">Speakers</h1>
+                
+                <div class="speakers-container">
+                    <div class="speaker-card" data-tilt>
+                        <div class="speaker-inner">
+                            <div class="speaker-front">
+                                <img src="foto/1.jpg" alt="Gabriele Ionadi">
+                                <h3>Gabriele Ionado</h3>
+                                <p>Iona</p>
+                            </div>
+                            <div class="speaker-back">
+                                <div class="speaker-info">
+                                    <h3>Gabriele Ionado</h3>
+                                    <p class="role">Lead Developer</p>
+                                    <div class="speaker-stats">
+                                        <div class="stat">
+                                            <span class="stat-value">5+</span>
+                                            <span class="stat-label">Years Exp</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="speaker">
-            <img src="foto/2.webp" alt="Mattia Mancuso">
-            <h3>Mattia Mancuso</h3>
-            <p>Mancu</p>
-        </div>
+                    <div class="speaker-card" data-tilt>
+                        <div class="speaker-inner">
+                            <div class="speaker-front">
+                                <img src="foto/2.webp" alt="Mattia Mancuso">
+                                <h3>Mattia Mancuso</h3>
+                                <p>Mancu</p>
+                            </div>
+                            <div class="speaker-back">
+                                <div class="speaker-info">
+                                    <h3>Mattia Mancuso</h3>
+                                    <p class="role">Creative Director</p>
+                                    <div class="speaker-stats">
+                                        <div class="stat">
+                                            <span class="stat-value">100+</span>
+                                            <span class="stat-label">Projects</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="speaker">
-             <img src="foto/3.webp" alt="Lorenzo Cappelleri">
-            <h3>Lorenzo Cappelleri</h3>
-            <p>Sommo</p>
-        </div>
+                    <div class="speaker-card" data-tilt>
+                        <div class="speaker-inner">
+                            <div class="speaker-front">
+                                <img src="foto/3.webp" alt="Lorenzo Cappelleri">
+                                <h3>Lorenzo Cappelleri</h3>
+                                <p>Sommo</p>
+                            </div>
+                            <div class="speaker-back">
+                                <div class="speaker-info">
+                                    <h3>Lorenzo Cappelleri</h3>
+                                    <p class="role">UI/UX Expert</p>
+                                    <div class="speaker-stats">
+                                        <div class="stat">
+                                            <span class="stat-value">50+</span>
+                                            <span class="stat-label">Designs</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="speaker">
-            <img src="foto/4.jpg" alt="Lorenzo Artesi">
-            <h3>Lorenzo Artesi</h3>
-            <p>King</p>
-        </div>
+                    <div class="speaker-card" data-tilt>
+                        <div class="speaker-inner">
+                            <div class="speaker-front">
+                                <img src="foto/4.jpg" alt="Lorenzo Artesi">
+                                <h3>Lorenzo Artesi</h3>
+                                <p>King</p>
+                            </div>
+                            <div class="speaker-back">
+                                <div class="speaker-info">
+                                    <h3>Lorenzo Artesi</h3>
+                                    <p class="role">Tech Lead</p>
+                                    <div class="speaker-stats">
+                                        <div class="stat">
+                                            <span class="stat-value">10+</span>
+                                            <span class="stat-label">Awards</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="speaker">
-            <img src="foto/5.webp" alt="Samuel Di Lauro">
-            <h3>Samuel Di Lauro</h3>
-            <p>Samu</p>
-        </div>
+                    <div class="speaker-card" data-tilt>
+                        <div class="speaker-inner">
+                            <div class="speaker-front">
+                                <img src="foto/5.webp" alt="Samuel Di Lauro">
+                                <h3>Sg-SamuelGame25</h3>
+                                <p>Samu</p>
+                            </div>
+                            <div class="speaker-back">
+                                <div class="speaker-info">
+                                    <h3>Samuel Di Lauro</h3>
+                                    <p class="role">Game Developer</p>
+                                    <div class="speaker-stats">
+                                        <div class="stat">
+                                            <span class="stat-value">25+</span>
+                                            <span class="stat-label">Games</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="speaker">
-            <img src="foto/6.jpg" alt="Enea Chiampo">
-            <h3>Enea Chiampo</h3>
-            <p>Eren</p>
-        </div>
-    </div>
-</div>
-        </div>
-        <div class="slide slide-2">
-            <div class="slide-content full">
-                <div class="text-content">
-                    <h1>Introduction: Ada Lovelace</h1>
-                    <p>Augusta Ada King, Countess of Lovelace (née Byron; 10 December 1815 - 27 November 1852), also known as Ada Lovelace, was an English mathematician and writer chiefly known for work on Charles Babbage's proposed mechanical general-purpose computer, the analytical engine.</p>
+                    <div class="speaker-card" data-tilt>
+                        <div class="speaker-inner">
+                            <div class="speaker-front">
+                                <img src="foto/6.jpg" alt="Enea Chiampo">
+                                <h3>Enea Chiampo</h3>
+                                <p>Eren</p>
+                            </div>
+                            <div class="speaker-back">
+                                <div class="speaker-info">
+                                    <h3>Enea Chiampo</h3>
+                                    <p class="role">Backend Expert</p>
+                                    <div class="speaker-stats">
+                                        <div class="stat">
+                                            <span class="stat-value">99%</span>
+                                            <span class="stat-label">Uptime</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- SLIDE 2: Introduction con effetto parallax -->
+        <div class="slide slide-2">
+            <div class="parallax-container">
+                <div class="parallax-layer layer-1"></div>
+                <div class="parallax-layer layer-2"></div>
+                <div class="parallax-layer layer-3"></div>
+            </div>
+            <div class="slide-content full">
+                <div class="text-content">
+                    <div class="reveal-text">
+                        <h1>Introduction: Ada Lovelace</h1>
+                        <div class="typing-container">
+                            <p>Augusta Ada King, Countess of Lovelace, 
+                                also known as Ada Lovelace, was an English mathematician and writer chiefly
+                                known for work on Charles Babbage's proposed mechanical
+                                general-purpose computer, the analytical engine.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-viz">
+                        <div class="timeline-point" data-year="1815">Born</div>
+                        <div class="timeline-line"></div>
+                        <div class="timeline-point" data-year="1833">Meets Babbage</div>
+                        <div class="timeline-line"></div>
+                        <div class="timeline-point" data-year="1843">First Algorithm</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Biography con info cards -->
         <div class="slide slide-3">
             <div class="slide-content full">
                 <div class="text-content">
                     <h1>Biography</h1>
-                    <p>Childhood
-Lord Byron expected his child to be a "glorious boy" and was disappointed when Lady Byron gave birth to a girl.[9] The child was named after Byron's half-sister, Augusta Leigh, and was called "Ada" by Byron himself.
-On 21 April, Lord Byron signed the deed of separation, although very reluctantly, and left England for good a few days later.[13] Aside from an acrimonious separation, Lady Byron continued throughout her life to make allegations about her husband's immoral behaviour.
-</p>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="card-icon">👶</div>
+                            <h3>Childhood</h3>
+                            <p>Lord Byron expected his child to be a "glorious boy" and was disappointed when Lady Byron gave birth to a girl. 
+                            The child was named after Byron's half-sister, Augusta Leigh, and was called "Ada" by Byron himself.</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="card-icon">👨‍👩‍👧</div>
+                            <h3>Separation</h3>
+                            <p>On 21 April, Lord Byron signed the deed of separation, although very reluctantly,
+                            and left England for good a few days later. Aside from an acrimonious separation,
+                            Lady Byron continued throughout her life to make allegations about her husband's immoral behaviour.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- SLIDE 4: Education con grafo interattivo -->
         <div class="slide slide-4">
             <div class="slide-content full">
                 <div class="text-content">
                     <h1>Education</h1>
-                    <p>From 1832, when she was seventeen, her mathematical abilities began to emerge,[23] and her interest in mathematics dominated the majority of her adult life.[39] Her mother's obsession with rooting out any of the insanity of which she accused Byron was one of the reasons that Ada was taught mathematics from an early age.</p>
+                    <p>From 1832, when she was seventeen, her mathematical abilities began to emerge, and her interest in mathematics dominated the majority of her adult life. Her mother's obsession with rooting out any of the insanity of which she accused Byron was one of the reasons that Ada was taught mathematics from an early age.</p>
+                    
+                    <div class="education-highlights">
+                        <div class="highlight-box">
+                            <div class="highlight-icon">📚</div>
+                            <h3>Mathematics</h3>
+                            <p>Tutored by Mary Somerville and Augustus De Morgan</p>
+                        </div>
+                        <div class="highlight-box">
+                            <div class="highlight-icon">🎵</div>
+                            <h3>Music & Arts</h3>
+                            <p>Studied harp and developed love for poetry</p>
+                        </div>
+                        <div class="highlight-box">
+                            <div class="highlight-icon">🔬</div>
+                            <h3>Sciences</h3>
+                            <p>Passionate about astronomy and engineering</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- SLIDE 5: Family con album fotografico interattivo -->
         <div class="slide slide-5">
             <div class="slide-content full">
                 <div class="text-content">
-                    <h1>Family and Life </h1>
-                    <p></p>
+                    <h1>Family and Life</h1>
+                    <div class="photo-gallery">
+                        <div class="photo-stack">
+                            <div class="photo">
+                                <div class="photo-content">
+                                    <div class="placeholder-image">👨‍👩‍👧‍👦</div>
+                                    <p class="photo-caption">Marriage to William King, 1835</p>
+                                </div>
+                            </div>
+                            <div class="photo">
+                                <div class="photo-content">
+                                    <div class="placeholder-image">👶👶👶</div>
+                                    <p class="photo-caption">Three children: Byron, Anne, Ralph</p>
+                                </div>
+                            </div>
+                            <div class="photo">
+                                <div class="photo-content">
+                                    <div class="placeholder-image">👑</div>
+                                    <p class="photo-caption">Became Countess of Lovelace, 1838</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- SLIDE 6: Projects con codice animato e tabs -->
         <div class="slide slide-6">
             <div class="slide-content full">
                 <div class="text-content">
-                    <h1>Progetti</h1>
-                    <p>Ho lavorato su diversi progetti, tra cui un'app di gestione delle attività, un sito di e-commerce
-                        e un blog personale. Amo affrontare nuove sfide e imparare nuove tecnologie.</p>
+                    <h1>The Analytical Engine</h1>
+                    
+                    <!-- Code Tabs -->
+                    <div class="code-tabs">
+                        <button class="code-tab active" data-lang="algorithm">Algorithm</button>
+                        <button class="code-tab" data-lang="notes">Ada's Notes</button>
+                        <button class="code-tab" data-lang="vision">Her Vision</button>
+                    </div>
+                    
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span class="code-lang">Algorithm - 1843</span>
+                            <div class="code-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <pre class="code-block"><code id="animatedCode"></code></pre>
+                    </div>
+                    <p class="code-description">Ada's algorithm to calculate Bernoulli numbers - the first computer program ever written.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Legacy -->
+        <div class="slide slide-7">
+            <div class="slide-content full">
+                <div class="text-content">
+                    <h1>Legacy</h1>
+                    <div class="impact-stats">
+                        <div class="impact-card">
+                            <div class="number-counter" data-target="1843">0</div>
+                            <p>First Computer Program</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="number-counter" data-target="1980">0</div>
+                            <p>Ada Programming Language</p>
+                        </div>
+                        <div class="impact-card">
+                            <div class="number-counter" data-target="100">0</div>
+                            <p>Years Ahead of Her Time</p>
+                        </div>
+                    </div>
+                    <blockquote class="quote">
+                        "The Analytical Engine weaves algebraic patterns, just as the Jacquard loom weaves flowers and leaves."
+                        <cite>— Ada Lovelace</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Controlli migliorati -->
     <div class="nav">
-        <button class="nav-btn" id="prev" onclick="prevSlide()">&lt;</button>
-        <button class="nav-btn" id="next" onclick="nextSlide()">&gt;</button>
+        <button class="nav-btn" id="prev" onclick="prevSlide()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button class="nav-btn" id="next" onclick="nextSlide()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
     </div>
 
     <div class="dots" id="dots"></div>
+    <div class="progress" id="progress"></div>
 
     <script src="script.js"></script>
 </body>
-
 </html>
