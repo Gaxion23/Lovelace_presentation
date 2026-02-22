@@ -139,15 +139,19 @@ function initializeSlideEffects(slideIndex) {
             // Info cards con hover effect
             break;
         case 3:
-            // Education highlights
+            // Family Tree
+            initFamilyTree();
             break;
         case 4:
-            // Photo stack già interattivo
+            // Education highlights
             break;
         case 5:
-            animateCode();
+            // Photo stack già interattivo
             break;
         case 6:
+            animateCode();
+            break;
+        case 7:
             animateCounters();
             break;
     }
@@ -156,13 +160,35 @@ function initializeSlideEffects(slideIndex) {
 // ===== TIMELINE ANIMATION =====
 function animateTimeline() {
     const timelinePoints = document.querySelectorAll('.timeline-point');
+    const timelineLines = document.querySelectorAll('.timeline-line');
+
+    // Reset state
+    timelinePoints.forEach(p => {
+        p.style.opacity = '0';
+        p.style.transform = 'scale(0) translateY(20px)';
+    });
+    timelineLines.forEach(l => {
+        l.style.opacity = '0';
+        l.style.transform = 'scaleX(0)';
+    });
+
+    // Animate in sequence
     timelinePoints.forEach((point, index) => {
         setTimeout(() => {
-            point.style.transform = 'scale(1.2)';
-            setTimeout(() => {
-                point.style.transform = 'scale(1)';
-            }, 300);
-        }, index * 500);
+            point.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            point.style.opacity = '1';
+            point.style.transform = 'scale(1) translateY(0)';
+
+            // Animate line after point (if not the last one)
+            const line = timelineLines[index];
+            if (line) {
+                setTimeout(() => {
+                    line.style.transition = 'transform 0.5s ease-out, opacity 0.5s ease-out';
+                    line.style.opacity = '1';
+                    line.style.transform = 'scaleX(1)';
+                }, 200);
+            }
+        }, index * 300);
     });
 }
 
@@ -208,20 +234,33 @@ and adaptations..."
 };
 
 let currentCodeTab = 'algorithm';
+let typingTimeout;
+let currentAnimationId = 0;
 
 function animateCode() {
     const codeElement = document.getElementById('animatedCode');
     if (!codeElement) return;
+
+    // Increment ID for this specific animation run
+    const animationId = ++currentAnimationId;
+
+    // Clear existing timeout to help garbage collection (though ID check is the primary guard)
+    if (typingTimeout) {
+        clearTimeout(typingTimeout);
+    }
 
     const code = codeSnippets[currentCodeTab];
     let i = 0;
     codeElement.textContent = '';
 
     function typeCode() {
+        // Stop if a new animation has been started since this one began
+        if (animationId !== currentAnimationId) return;
+
         if (i < code.length) {
             codeElement.textContent += code.charAt(i);
             i++;
-            setTimeout(typeCode, 20);
+            typingTimeout = setTimeout(typeCode, 20);
         }
     }
 
@@ -345,7 +384,7 @@ document.addEventListener('keydown', (e) => {
         prevSlide();
     }
     // Number keys for direct navigation
-    if (e.key >= '1' && e.key <= '7') {
+    if (e.key >= '1' && e.key <= '8') {
         goToSlide(parseInt(e.key) - 1);
     }
 });
@@ -389,6 +428,92 @@ window.addEventListener('load', () => {
     // Add loading animation complete
     document.body.style.opacity = '1';
 });
+
+// ===== FAMILY TREE (SLIDE 4) =====
+const familyPhotos = {
+    'ada': { path: 'foto/Ada_Lovelace.jpg', pos: 'center 20%' },
+    'g1a': { path: 'foto/Lord_Byron.jpg', pos: 'center top' },
+    'g1b': { path: 'foto/Annabella_Byron.jpg', pos: 'center 15%' },
+    'spouse': { path: 'foto/William_King.jpg', pos: 'center top' },
+    'g0a': { path: 'foto/john_byron.jpeg', pos: 'center top' },
+    'g0b': { path: 'foto/sophia_trevanion.jpg', pos: 'center 10%' },
+    'g0c': { path: 'foto/Sir_Ralph_Milbanke.jpg', pos: 'center top' },
+    'g0d': { path: 'foto/judith_Noel.jpg', pos: 'center 15%' },
+    'c1': { path: 'foto/byron_king.jpeg', pos: 'center top' },
+    'c2': { path: 'foto/anne_blunt.jpeg', pos: 'center top' },
+    'c3': { path: 'foto/ralph_king.jpeg', pos: 'center top' }
+};
+
+function initFamilyTree() {
+    const nodes = document.querySelectorAll('.family-tree-slide .tree-node');
+
+    // Animate nodes in staggered sequence per generation
+    nodes.forEach((node) => {
+        node.style.opacity = '0';
+        node.style.transform = 'translateY(30px) scale(0.8)';
+    });
+
+    const gens = document.querySelectorAll('.family-tree-slide .tree-gen');
+    let delay = 100;
+    gens.forEach((gen, gi) => {
+        const genNodes = gen.querySelectorAll('.tree-node');
+        genNodes.forEach((node, ni) => {
+            setTimeout(() => {
+                node.style.transition = 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                node.style.opacity = '1';
+                node.style.transform = 'translateY(0) scale(1)';
+            }, delay + gi * 200 + ni * 100);
+        });
+        delay += 100;
+    });
+
+    // Panel elements
+    const panelAvatar = document.getElementById('infoPanelAvatar');
+    const panelName = document.getElementById('infoPanelName');
+    const panelDates = document.getElementById('infoPanelDates');
+    const panelRole = document.getElementById('infoPanelRole');
+    const panelBio = document.getElementById('infoPanelBio');
+    const panel = document.getElementById('treeInfoPanel');
+
+    function setPanel(node) {
+        const nodeId = node.getAttribute('data-id');
+        const photo = familyPhotos[nodeId];
+
+        // Extract data
+        const icon = node.querySelector('.node-avatar')?.innerHTML || '👤';
+        const name = node.querySelector('.node-name')?.textContent?.trim() || '';
+        const dates = node.querySelector('.node-dates')?.textContent?.trim() || '';
+        const role = node.querySelector('.node-role')?.textContent?.trim() || '';
+        const bio = node.getAttribute('data-info') || '';
+
+        // If a photo exists for this member, use it in the panel; otherwise use the tree icon
+        let avatarContent = icon;
+        if (photo) {
+            const pos = photo.pos || 'center top';
+            avatarContent = `<img src="${photo.path}" alt="${name}" style="object-position: ${pos}">`;
+        }
+
+        // Fade out, swap, fade in
+        panel.classList.add('panel-updating');
+        setTimeout(() => {
+            panelAvatar.innerHTML = avatarContent;
+            panelName.textContent = name;
+            panelDates.textContent = dates;
+            panelRole.textContent = role;
+            panelBio.textContent = bio;
+            panel.classList.remove('panel-updating');
+        }, 180);
+
+        // Mark active node
+        nodes.forEach(n => n.classList.remove('node-selected'));
+        node.classList.add('node-selected');
+    }
+
+    // Click interaction
+    nodes.forEach(node => {
+        node.addEventListener('click', () => setPanel(node));
+    });
+}
 
 console.log('🚀 Ada Lovelace Presentation Loaded');
 console.log('💡 Use Arrow Keys, Mouse Wheel, or Swipe to navigate');

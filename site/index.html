@@ -29,18 +29,22 @@
         </div>
         <div class="nav-item" data-slide="3">
             <span class="nav-number">04</span>
-            <span class="nav-label">Education</span>
+            <span class="nav-label">Family Tree</span>
         </div>
         <div class="nav-item" data-slide="4">
             <span class="nav-number">05</span>
-            <span class="nav-label">Family</span>
+            <span class="nav-label">Education</span>
         </div>
         <div class="nav-item" data-slide="5">
             <span class="nav-number">06</span>
-            <span class="nav-label">Projects</span>
+            <span class="nav-label">Family</span>
         </div>
         <div class="nav-item" data-slide="6">
             <span class="nav-number">07</span>
+            <span class="nav-label">Projects</span>
+        </div>
+        <div class="nav-item" data-slide="7">
+            <span class="nav-number">08</span>
             <span class="nav-label">Legacy</span>
         </div>
     </nav>
@@ -49,9 +53,10 @@
         <!-- SLIDE 1: Speakers con effetto 3D Card -->
         <div class="slide slide-1 active">
             <div class="slide-content full">
-                <h1 id="maintitolo" class="glitch" data-text="Ada Lovelace : The Countess">Ada Lovelace : The Countess</h1>
+                <h1 id="maintitolo" class="glitch" data-text="Ada Lovelace : The Countess">Ada Lovelace : The Countess
+                </h1>
                 <h1 id="speakers_sott">Speakers</h1>
-                
+
                 <div class="speakers-container">
                     <div class="speaker-card" data-tilt>
                         <div class="speaker-inner">
@@ -107,11 +112,11 @@
                             <div class="speaker-back">
                                 <div class="speaker-info">
                                     <h3>Lorenzo Cappelleri</h3>
-                                    <p class="role">UI/UX Expert</p>
+                                    <p class="role">Prova a giocare a calcio</p>
                                     <div class="speaker-stats">
                                         <div class="stat">
-                                            <span class="stat-value">50+</span>
-                                            <span class="stat-label">Designs</span>
+                                            <span class="stat-value">1000+</span>
+                                            <span class="stat-label">Minuti in panchina</span>
                                         </div>
                                     </div>
                                 </div>
@@ -200,18 +205,40 @@
                     <div class="reveal-text">
                         <h1>Introduction: Ada Lovelace</h1>
                         <div class="typing-container">
-                            <p>Augusta Ada King, Countess of Lovelace, 
+                            <p>Augusta Ada King, Countess of Lovelace,
                                 also known as Ada Lovelace, was an English mathematician and writer chiefly
                                 known for work on Charles Babbage's proposed mechanical
                                 general-purpose computer, the analytical engine.</p>
                         </div>
                     </div>
                     <div class="timeline-viz">
-                        <div class="timeline-point" data-year="1815">Born</div>
+                        <div class="timeline-point" data-year="1815" data-type="life">
+                            <span class="timeline-label">Born</span>
+                        </div>
                         <div class="timeline-line"></div>
-                        <div class="timeline-point" data-year="1833">Meets Babbage</div>
+                        <div class="timeline-point" data-year="1833" data-type="life">
+                            <span class="timeline-label">Meets Babbage</span>
+                        </div>
                         <div class="timeline-line"></div>
-                        <div class="timeline-point" data-year="1843">First Algorithm</div>
+                        <div class="timeline-point" data-year="1843" data-type="life">
+                            <span class="timeline-label">First Algorithm</span>
+                        </div>
+                        <div class="timeline-line"></div>
+                        <div class="timeline-point" data-year="1852" data-type="life">
+                            <span class="timeline-label">Death</span>
+                        </div>
+                        <div class="timeline-line"></div>
+                        <div class="timeline-point" data-year="1940" data-type="legacy">
+                            <span class="timeline-label">Turing Machine</span>
+                        </div>
+                        <div class="timeline-line"></div>
+                        <div class="timeline-point" data-year="1980" data-type="legacy">
+                            <span class="timeline-label">ADA Language</span>
+                        </div>
+                        <div class="timeline-line"></div>
+                        <div class="timeline-point" data-year="2009" data-type="legacy">
+                            <span class="timeline-label">Ada Lovelace Day</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -226,28 +253,163 @@
                         <div class="info-card">
                             <div class="card-icon">👶</div>
                             <h3>Childhood</h3>
-                            <p>Lord Byron expected his child to be a "glorious boy" and was disappointed when Lady Byron gave birth to a girl. 
-                            The child was named after Byron's half-sister, Augusta Leigh, and was called "Ada" by Byron himself.</p>
+                            <p>Lord Byron expected his child to be a "glorious boy" and was disappointed when Lady Byron
+                                gave birth to a girl.
+                                The child was named after Byron's half-sister, Augusta Leigh, and was called "Ada" by
+                                Byron himself.</p>
                         </div>
                         <div class="info-card">
                             <div class="card-icon">👨‍👩‍👧</div>
                             <h3>Separation</h3>
                             <p>On 21 April, Lord Byron signed the deed of separation, although very reluctantly,
-                            and left England for good a few days later. Aside from an acrimonious separation,
-                            Lady Byron continued throughout her life to make allegations about her husband's immoral behaviour.</p>
+                                and left England for good a few days later. Aside from an acrimonious separation,
+                                Lady Byron continued throughout her life to make allegations about her husband's immoral
+                                behaviour.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 4: Education con grafo interattivo -->
-        <div class="slide slide-4">
+        <!-- SLIDE 4: Family Tree -->
+        <div class="slide slide-4 family-tree-slide">
+            <div class="slide-content full">
+                <div class="tree-layout">
+
+                    <!-- LEFT: Info Panel -->
+                    <div class="tree-info-panel" id="treeInfoPanel">
+                        <div class="info-panel-inner">
+                            <div class="info-panel-avatar" id="infoPanelAvatar">♾️</div>
+                            <div class="info-panel-name" id="infoPanelName">Ada Lovelace</div>
+                            <div class="info-panel-dates" id="infoPanelDates">1815 - 1852</div>
+                            <div class="info-panel-role" id="infoPanelRole">World's First Programmer</div>
+                            <div class="info-panel-divider"></div>
+                            <div class="info-panel-bio" id="infoPanelBio">Augusta Ada Byron, Countess of Lovelace
+                                (1815-1852) — Mathematician and writer. Collaborated with Charles Babbage on the
+                                Analytical Engine. Wrote the first algorithm intended for a machine — the first computer
+                                program in history.</div>
+                            <div class="info-panel-hint">click a node to explore ></div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Tree + Title -->
+                    <div class="tree-right-col">
+                        <div class="tree-header">
+                            <h1>Family Tree</h1>
+                            <p class="tree-subtitle">The lineage of Augusta Ada Byron, Countess of Lovelace</p>
+                        </div>
+                        <div class="tree-wrapper">
+                            <svg class="tree-connectors" id="treeConnectors"></svg>
+                            <div class="tree-root generation-0">
+                                <!-- Generation 0: great-grandparents -->
+                                <div class="tree-gen gen-0">
+                                    <div class="tree-node ancestor" data-id="g0a"
+                                        data-info="John Byron (1723-1786) — Royal Navy Admiral, known as 'Foul-weather Jack', grandfather of Lord Byron.">
+                                        <div class="node-avatar">⚓</div>
+                                        <div class="node-name">John Byron</div>
+                                        <div class="node-dates">1723 - 1786</div>
+                                        <div class="node-role">Admiral</div>
+                                    </div>
+                                    <div class="tree-node ancestor" data-id="g0b"
+                                        data-info="Sophia Trevanion (1726-1790) — Wife of Admiral John Byron, maternal great-grandmother of Ada.">
+                                        <div class="node-avatar">🌹</div>
+                                        <div class="node-name">Sophia Trevanion</div>
+                                        <div class="node-dates">1726 - 1790</div>
+                                        <div class="node-role">Noblewoman</div>
+                                    </div>
+                                    <div class="tree-node ancestor" data-id="g0c"
+                                        data-info="Sir Ralph Milbanke (1747-1825) — 6th Baronet, father of Annabella Milbanke who married Lord Byron.">
+                                        <div class="node-avatar">🏰</div>
+                                        <div class="node-name">Ralph Milbanke</div>
+                                        <div class="node-dates">1747 - 1825</div>
+                                        <div class="node-role">6th Baronet</div>
+                                    </div>
+                                    <div class="tree-node ancestor" data-id="g0d"
+                                        data-info="Judith Noel (1751-1822) — Heiress of the Wentworth estate, mother of Annabella Milbanke.">
+                                        <div class="node-avatar">👑</div>
+                                        <div class="node-name">Judith Noel</div>
+                                        <div class="node-dates">1751 - 1822</div>
+                                        <div class="node-role">Heiress</div>
+                                    </div>
+                                </div>
+
+                                <!-- Generation 1: parents -->
+                                <div class="tree-gen gen-1">
+                                    <div class="tree-node parent" data-id="g1a"
+                                        data-info="Lord George Gordon Byron (1788-1824) — One of the greatest Romantic poets. Author of Don Juan and Childe Harold's Pilgrimage. Ada's father, whom she never truly knew.">
+                                        <div class="node-avatar">✍️</div>
+                                        <div class="node-name">Lord Byron</div>
+                                        <div class="node-dates">1788 - 1824</div>
+                                        <div class="node-role">Romantic Poet</div>
+                                    </div>
+                                    <div class="tree-node parent" data-id="g1b"
+                                        data-info="Anne Isabella 'Annabella' Milbanke (1792-1860) — Known as 'Princess of Parallelograms' for her mathematical intellect. She ensured Ada received a rigorous scientific education.">
+                                        <div class="node-avatar">📐</div>
+                                        <div class="node-name">Annabella Milbanke</div>
+                                        <div class="node-dates">1792 - 1860</div>
+                                        <div class="node-role">Mathematician</div>
+                                    </div>
+                                </div>
+
+                                <!-- Generation 2: Ada (center) -->
+                                <div class="tree-gen gen-2">
+                                    <div class="tree-node ada-node" data-id="ada"
+                                        data-info="Augusta Ada Byron, Countess of Lovelace (1815-1852) — Mathematician and writer. Collaborated with Charles Babbage on the Analytical Engine. Wrote the first algorithm intended for a machine — the first computer program in history.">
+                                        <div class="node-avatar ada-avatar">♾️</div>
+                                        <div class="node-name">Ada Lovelace</div>
+                                        <div class="node-dates">1815 - 1852</div>
+                                        <div class="node-role">World's First Programmer</div>
+                                    </div>
+                                    <div class="tree-node spouse" data-id="spouse"
+                                        data-info="William King-Noel, 1st Earl of Lovelace (1805-1893) — Politician and landowner. Married Ada in 1835, fully supportive of her scientific pursuits. He outlived Ada by over 40 years.">
+                                        <div class="node-avatar">🎖️</div>
+                                        <div class="node-name">William King-Noel</div>
+                                        <div class="node-dates">1805 - 1893</div>
+                                        <div class="node-role">Earl of Lovelace</div>
+                                    </div>
+                                </div>
+
+                                <!-- Generation 3: children -->
+                                <div class="tree-gen gen-3">
+                                    <div class="tree-node child" data-id="c1"
+                                        data-info="Byron King-Noel (1836-1862) — Eldest child of Ada and William. Became a naval officer. Died at only 26, just a decade after his mother.">
+                                        <div class="node-avatar">⚓</div>
+                                        <div class="node-name">Byron King-Noel</div>
+                                        <div class="node-dates">1836 - 1862</div>
+                                        <div class="node-role">Naval Officer</div>
+                                    </div>
+                                    <div class="tree-node child" data-id="c2"
+                                        data-info="Anne Blunt (1837-1917) — Daughter of Ada, became a renowned horse breeder and traveller. Co-founded the Crabbet Arabian Stud and was a skilled musician. Outlived her siblings significantly.">
+                                        <div class="node-avatar">🐴</div>
+                                        <div class="node-name">Anne Blunt</div>
+                                        <div class="node-dates">1837 - 1917</div>
+                                        <div class="node-role">Explorer & Breeder</div>
+                                    </div>
+                                    <div class="tree-node child" data-id="c3"
+                                        data-info="Ralph Gordon King-Milbanke (1839-1906) — Youngest child of Ada, became the 2nd Earl of Lovelace. Published works about his grandfather Lord Byron.">
+                                        <div class="node-avatar">📜</div>
+                                        <div class="node-name">Ralph Gordon</div>
+                                        <div class="node-dates">1839 - 1906</div>
+                                        <div class="node-role">2nd Earl of Lovelace</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- end tree-wrapper -->
+                    </div><!-- end tree-right-col -->
+                </div><!-- end tree-layout -->
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Education con grafo interattivo -->
+        <div class="slide slide-5">
             <div class="slide-content full">
                 <div class="text-content">
                     <h1>Education</h1>
-                    <p>From 1832, when she was seventeen, her mathematical abilities began to emerge, and her interest in mathematics dominated the majority of her adult life. Her mother's obsession with rooting out any of the insanity of which she accused Byron was one of the reasons that Ada was taught mathematics from an early age.</p>
-                    
+                    <p>From 1832, when she was seventeen, her mathematical abilities began to emerge, and her interest
+                        in mathematics dominated the majority of her adult life. Her mother's obsession with rooting out
+                        any of the insanity of which she accused Byron was one of the reasons that Ada was taught
+                        mathematics from an early age.</p>
+
                     <div class="education-highlights">
                         <div class="highlight-box">
                             <div class="highlight-icon">📚</div>
@@ -280,7 +442,7 @@
                                 <div class="photo-content">
                                     <div class="placeholder-image">👨‍👩‍👧‍👦</div>
                                     <p class="photo-caption">Marriage to William King, 1835</p>
-                                    <img src="foto/foto_cappe/williamking2.webp"/>
+                                    <img src="foto/foto_cappe/williamking2.webp" />
                                 </div>
                             </div>
                             <div class="photo">
@@ -288,7 +450,7 @@
                                     <div class="placeholder-image">👶👶👶</div>
                                     <p class="photo-caption">Three children: Byron, Anne, Ralph</p>
                                     <img src="foto/foto_cappe/byron king.jpg.jpeg">
-                                    <img src="foto/foto_cappe/anne king.jpg.jpeg">        
+                                    <img src="foto/foto_cappe/anne king.jpg.jpeg">
                                     <img src="foto/foto_cappe/ralph king.jpg.jpeg">
                                 </div>
                             </div>
@@ -309,14 +471,14 @@
             <div class="slide-content full">
                 <div class="text-content">
                     <h1>The Analytical Engine</h1>
-                    
+
                     <!-- Code Tabs -->
                     <div class="code-tabs">
                         <button class="code-tab active" data-lang="algorithm">Algorithm</button>
                         <button class="code-tab" data-lang="notes">Ada's Notes</button>
                         <button class="code-tab" data-lang="vision">Her Vision</button>
                     </div>
-                    
+
                     <div class="code-container">
                         <div class="code-header">
                             <span class="code-lang">Algorithm - 1843</span>
@@ -326,7 +488,8 @@
                         </div>
                         <pre class="code-block"><code id="animatedCode"></code></pre>
                     </div>
-                    <p class="code-description">Ada's algorithm to calculate Bernoulli numbers - the first computer program ever written.</p>
+                    <p class="code-description">Ada's algorithm to calculate Bernoulli numbers - the first computer
+                        program ever written.</p>
                 </div>
             </div>
         </div>
@@ -351,7 +514,8 @@
                         </div>
                     </div>
                     <blockquote class="quote">
-                        "The Analytical Engine weaves algebraic patterns, just as the Jacquard loom weaves flowers and leaves."
+                        "The Analytical Engine weaves algebraic patterns, just as the Jacquard loom weaves flowers and
+                        leaves."
                         <cite>— Ada Lovelace</cite>
                     </blockquote>
                 </div>
@@ -378,4 +542,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
