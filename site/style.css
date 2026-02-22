@@ -144,14 +144,14 @@ body {
 
 .glitch::before {
     left: 2px;
-    text-shadow: -2px 0 #ff00de;
+    text-shadow: -2px 0 #00ff41;
     clip: rect(44px, 450px, 56px, 0);
     animation: glitch-anim 5s infinite linear alternate-reverse;
 }
 
 .glitch::after {
     left: -2px;
-    text-shadow: -2px 0 #00fff9;
+    text-shadow: -2px 0 #c890ff;
     clip: rect(44px, 450px, 56px, 0);
     animation: glitch-anim2 5s infinite linear alternate-reverse;
 }
@@ -307,7 +307,7 @@ body {
 .speaker-card {
     position: relative;
     width: 100%;
-    height: 250px;
+    height: 340px;
     /* cursor: pointer; */
     perspective: 1000px;
 }
@@ -342,8 +342,8 @@ body {
 }
 
 .speaker-front img {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 15px;
@@ -352,14 +352,14 @@ body {
 }
 
 .speaker-front h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     color: #fff;
 }
 
 .speaker-front p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #888;
     margin: 0;
 }
@@ -943,6 +943,8 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     margin: 60px 0;
+    align-items: stretch;
+    grid-auto-rows: 200px;
 }
 
 .impact-card {
@@ -1087,7 +1089,7 @@ p {
 /* ===== NAVIGATION BUTTONS ===== */
 .nav {
     position: fixed;
-    bottom: 160px;
+    bottom: 40px;
     right: 60px;
     z-index: 100;
     display: flex;
@@ -1162,10 +1164,12 @@ p {
 #maintitolo {
     font-size: 4.5rem;
     font-weight: 800;
-    letter-spacing: -1.5px;
+    letter-spacing: 4px;
     margin-bottom: 20px;
-    color: #ffffff;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    color: #00ff41;
+    text-shadow: 0 0 20px rgba(0, 255, 65, 0.9), 0 0 60px rgba(0, 255, 65, 0.4), 0 0 2px #fff;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
 }
 
 #speakers_sott {
@@ -1236,7 +1240,7 @@ p {
     }
 
     .nav {
-        bottom: 80px;
+        bottom: 20px;
         right: 20px;
     }
 
@@ -1574,4 +1578,150 @@ p {
 .ada-node .node-role {
     font-size: 0.58rem;
     color: rgba(201, 165, 90, 0.8);
+}
+
+/* ===== ADA LANG FLIP CARD ===== */
+.ada-lang-flip {
+    text-align: center;
+    perspective: 1000px;
+    height: 200px;
+    border-radius: 15px;
+}
+
+.ada-lang-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+    cursor: pointer;
+}
+
+.ada-lang-flip:hover .ada-lang-inner {
+    transform: rotateY(180deg);
+}
+
+.ada-lang-front,
+.ada-lang-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 14px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.ada-lang-front {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ada-lang-front .number-counter {
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+}
+
+.ada-lang-front p {
+    font-size: 1rem;
+    color: #aaa;
+}
+
+.ada-lang-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, rgba(100, 50, 180, 0.25), rgba(180, 120, 255, 0.1));
+    border: 1px solid rgba(180, 120, 255, 0.3);
+    text-align: center;
+    gap: 6px;
+}
+
+.ada-lang-back-icon {
+    font-size: 1.4rem;
+    margin-bottom: 2px;
+    flex-shrink: 0;
+}
+
+.ada-lang-back-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.ada-lang-back-year {
+    font-size: 0.7rem;
+    color: #c890ff;
+    font-weight: 600;
+    margin-bottom: 4px;
+    flex-shrink: 0;
+}
+
+.ada-lang-back-desc {
+    font-size: 0.68rem;
+    color: #bbb;
+    line-height: 1.4;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.ada-lang-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ada-lang-tags span {
+    font-size: 0.6rem;
+    background: rgba(180, 120, 255, 0.15);
+    border: 1px solid rgba(180, 120, 255, 0.35);
+    color: #c890ff;
+    padding: 2px 7px;
+    border-radius: 20px;
+}
+
+/* Prevent impact-card hover from interfering with flip */
+.ada-lang-flip:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* ===== HACKER TITLE CURSOR ===== */
+#maintitolo::after {
+    content: '_';
+    animation: cursorBlink 0.8s step-end infinite;
+    color: #00ff41;
+    text-shadow: 0 0 10px #00ff41;
+    margin-left: 4px;
+}
+
+@keyframes cursorBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Scanline flicker on title */
+#maintitolo {
+    position: relative;
 }

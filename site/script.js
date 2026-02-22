@@ -146,12 +146,9 @@ function initializeSlideEffects(slideIndex) {
             // Education highlights
             break;
         case 5:
-            // Photo stack già interattivo
-            break;
-        case 6:
             animateCode();
             break;
-        case 7:
+        case 6:
             animateCounters();
             break;
     }
@@ -384,7 +381,7 @@ document.addEventListener('keydown', (e) => {
         prevSlide();
     }
     // Number keys for direct navigation
-    if (e.key >= '1' && e.key <= '8') {
+    if (e.key >= '1' && e.key <= '7') {
         goToSlide(parseInt(e.key) - 1);
     }
 });
