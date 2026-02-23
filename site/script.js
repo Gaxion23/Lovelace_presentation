@@ -435,7 +435,7 @@ const familyPhotos = {
     'g0a': { path: 'foto/john_byron.jpeg', pos: 'center top' },
     'g0b': { path: 'foto/sophia_trevanion.jpg', pos: 'center 10%' },
     'g0c': { path: 'foto/Sir_Ralph_Milbanke.jpg', pos: 'center top' },
-    'g0d': { path: 'foto/judith_Noel.jpg', pos: 'center 15%' },
+    'g0d': { path: 'foto/Judith_Noel.jpg', pos: 'center 15%' },
     'c1': { path: 'foto/byron_king.jpeg', pos: 'center top' },
     'c2': { path: 'foto/anne_blunt.jpeg', pos: 'center top' },
     'c3': { path: 'foto/ralph_king.jpeg', pos: 'center top' }
