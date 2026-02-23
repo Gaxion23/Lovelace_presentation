@@ -361,7 +361,7 @@ function startLoading() {
             label.style.color = 'var(--green)';
             label.style.textShadow = '0 0 12px var(--green)';
             setTimeout(() => {
-                window.location.href = 'index.html';
+                window.location.href = 'home.html';
             }, 400);
         }
     }, tickMs);
