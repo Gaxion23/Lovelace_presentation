@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADA://LOVELACE — SYSTEM BOOT</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+    <div class="cursor" id="cursor"></div>
+
+    <div class="screen">
+
+        <!-- LEFT: SCROLLING TERMINAL LOG -->
+        <div class="terminal-panel">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span></span><span></span><span></span>
+                </div>
+                <span class="terminal-title">ADA://LOVELACE — SYSTEM LOG — ∞</span>
+            </div>
+            <div class="terminal-body">
+                <div id="scrollText"></div>
+            </div>
+        </div>
+
+        <!-- RIGHT: ADA INFO -->
+        <div class="info-panel">
+            <div class="info-header">
+                <div class="blink"></div>
+                <span>ENTITY IDENTIFIED</span>
+            </div>
+
+            <div class="info-content">
+
+                <!-- ASCII -->
+                <pre class="ascii-art">
+ █████╗ ██████╗  █████╗
+██╔══██╗██╔══██╗██╔══██╗
+███████║██║  ██║███████║
+██╔══██║██║  ██║██╔══██║
+██║  ██║██████╔╝██║  ██║
+╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝</pre>
+
+                <!-- Title -->
+                <div class="ada-title">
+                    <h1>LOVELACE</h1>
+                    <div class="subtitle">Augusta Ada Byron King, Countess of Lovelace</div>
+                </div>
+
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-label">Born</div>
+                        <div class="stat-value">10.12.18.15</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Status</div>
+                        <div class="stat-value" style="color: var(--purple);">LEGEND</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">First Algorithm</div>
+                        <div class="stat-value">1843</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Years Ahead</div>
+                        <div class="stat-value">~100</div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="progress-section">
+                    <div class="progress-row">
+                        <div class="progress-label"><span>MATHEMATICS</span><span>98%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="--target: 98%; --delay: 0.2s;"></div>
+                        </div>
+                    </div>
+                    <div class="progress-row">
+                        <div class="progress-label"><span>ALGORITHM DESIGN</span><span>100%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="--target: 100%; --delay: 0.5s;"></div>
+                        </div>
+                    </div>
+                    <div class="progress-row">
+                        <div class="progress-label"><span>VISIONARY THINKING</span><span>100%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="--target: 100%; --delay: 0.8s;"></div>
+                        </div>
+                    </div>
+                    <div class="progress-row">
+                        <div class="progress-label"><span>POETRY & SCIENCE</span><span>95%</span></div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="--target: 95%; --delay: 1.1s;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote -->
+                <div class="ada-quote">
+                    <p>"The Analytical Engine weaves algebraic patterns, just as the Jacquard loom weaves flowers and
+                        leaves."</p>
+                    <cite>— ADA LOVELACE, 1843</cite>
+                </div>
+
+                <!-- CTA -->
+                <button class="enter-btn" id="enterBtn" onclick="startLoading()">[ ENTER THE ARCHIVE ]</button>
+
+            </div>
+
+            <div class="boot-status">
+                <span>SYS::READY</span>
+                <span class="status-ok" id="clock">00:00:00</span>
+                <span>BUILD_1843</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script2.js"></script>
+
+    <!-- LOADING OVERLAY -->
+    <div id="loadingOverlay">
+        <div class="load-label" id="loadLabel">INITIALIZING ARCHIVE...</div>
+        <div class="load-bar-wrapper">
+            <div class="load-bar-track">
+                <div class="load-bar-fill" id="loadBarFill"></div>
+            </div>
+            <div class="load-bar-info">
+                <span id="loadPercent">0%</span>
+                <span id="loadStep">LOADING...</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
