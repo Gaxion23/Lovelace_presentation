@@ -21,6 +21,6 @@
 ---
 
 ## ✍️ Creato da:
-* **Studente:** I Broderi
+* **Creato da:** I Broderi
 * **Materia:** TPSIT / Inglese
 * **Anno Scolastico:** 2025/2026
